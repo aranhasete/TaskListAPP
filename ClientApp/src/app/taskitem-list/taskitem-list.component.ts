@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TaskItem } from '../task-item';
 
 @Component({
   selector: 'app-taskitem-list',
@@ -28,8 +29,8 @@ export class TaskitemListComponent implements OnInit {
 
 }
 
-interface TaskItem {
-  id: number;
-  title: number;
-  isComplete: boolean;
-}
+// interface TaskItem {
+//   id: number;
+//   title: number;
+//   isComplete: boolean;
+// }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { TaskItem } from '../task-item';
 
 @Component({
   selector: 'app-taskitem-add',
@@ -47,8 +48,8 @@ export class TaskitemAddComponent implements OnInit {
   }
 }
 
-interface TaskItem {
-  title: number;
-  isComplete: boolean;
-}
+// interface TaskItem {
+//   title: number;
+//   isComplete: boolean;
+// }
 
