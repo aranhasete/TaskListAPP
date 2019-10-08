@@ -1,0 +1,22 @@
+<h1>Task Item</h1>
+
+<!-- <p>This component demonstrates fetching data from the server.</p> -->
+
+<p *ngIf="!taskItems"><em>Loading...</em></p>
+
+<table class='table table-striped' *ngIf="taskItems">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Title</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let taskItem of taskItems">
+      <td>{{ taskItem.id }}</td>
+      <td>{{ taskItem.title }}</td>
+      <td>{{ taskItem.isComplete }}</td>
+    </tr>
+  </tbody>
+</table>
