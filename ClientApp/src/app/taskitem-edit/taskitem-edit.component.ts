@@ -62,7 +62,6 @@ export class TaskitemEditComponent implements OnInit {
   }
 
   updateTaskItem(Id, Title, IsComplete) {
-    console.log('Entou aqui');
     const obj = {
       Id,
       Title,
