@@ -5,12 +5,9 @@
 <p *ngIf="!taskItems"><em>Loading...</em></p>
 
 <div *ngIf="taskItems">
-  <!-- <div class="button-row">
-    <a mat-flat-button color="primary" [routerLink]='["/taskitem-add"]'>
-      <mat-icon>add</mat-icon>
-    </a>
-  </div> -->
-  <a mat-flat-button class="btn btn-primary mt-4" [routerLink]='["/taskitem-add"]'>New Task</a>
+  <div class="button-row">
+    <button class="btn btn-primary mr-1" type="button" [routerLink]='["/taskitem-add"]'>New Task</button>
+  </div>
   <br>
 
   <table class='table table-striped' *ngIf="taskItems">
@@ -19,6 +16,7 @@
         <th>Id</th>
         <th>Title</th>
         <th>Status</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -26,9 +24,12 @@
         <td>{{ taskItem.id }}</td>
         <td>{{ taskItem.title }}</td>
         <td>{{ taskItem.isComplete }}</td>
-        <!-- <td>
-        <a [routerLink]="['/employee/', b.id]">Edit</a>
-      </td> -->
+        <td width="250">                
+            <button type="button" class="btn btn-danger mr-1">Delete</button>
+            <a [routerLink]='["/taskitem-edit/", taskItem.id]'>
+              <button type="button" class="btn btn-primary">Edit</button>
+            </a>
+        </td>
       </tr>
     </tbody>
   </table>
