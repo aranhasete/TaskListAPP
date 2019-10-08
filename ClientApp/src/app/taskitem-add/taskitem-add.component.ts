@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { TaskItem } from '../task-item';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-taskitem-add',
@@ -9,14 +10,17 @@ import { TaskItem } from '../task-item';
   styleUrls: ['./taskitem-add.component.css']
 })
 export class TaskitemAddComponent implements OnInit {
-  taskItemForm: FormGroup;
+  taskItemFormAdd: FormGroup;
   public taskItem: TaskItem;
   private myHttp: HttpClient;
   private myBaseUrl: string;
+  private myRouter: Router;
 
-  constructor(private formBuilder: FormBuilder, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(private formBuilder: FormBuilder, http: HttpClient, @Inject('BASE_URL') baseUrl: string,
+              private router: Router) {
     this.myHttp = http;
     this.myBaseUrl = baseUrl;
+    this.myRouter = router;
     this.createContactForm();
   }
 
@@ -24,7 +28,7 @@ export class TaskitemAddComponent implements OnInit {
   }
 
   createContactForm() {
-    this.taskItemForm = this.formBuilder.group({
+    this.taskItemFormAdd = this.formBuilder.group({
       title: [''],
       isComplete: [false]
     });
@@ -43,13 +47,13 @@ export class TaskitemAddComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log('Your form data : ', this.taskItemForm.value);
-    this.addTaskItem(this.taskItemForm.value.title, this.taskItemForm.value.isComplete);
+    console.log('Your form data : ', this.taskItemFormAdd.value);
+    this.addTaskItem(this.taskItemFormAdd.value.title, this.taskItemFormAdd.value.isComplete);
+    this.taskItemFormAdd.reset();
+    // this.goToList()
+  }
+
+  goToList() {
+    this.myRouter.navigate(['/TaskItems']);
   }
 }
-
-// interface TaskItem {
-//   title: number;
-//   isComplete: boolean;
-// }
-

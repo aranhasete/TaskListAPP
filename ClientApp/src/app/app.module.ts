@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { TaskitemListComponent } from './taskitem-list/taskitem-list.component';
 import { TaskitemAddComponent } from './taskitem-add/taskitem-add.component';
+import { TaskitemEditComponent } from './taskitem-edit/taskitem-edit.component';
+import { TaskitemDeleteComponent } from './taskitem-delete/taskitem-delete.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TaskitemAddComponent } from './taskitem-add/taskitem-add.component';
     CounterComponent,
     FetchDataComponent,
     TaskitemListComponent,
-    TaskitemAddComponent
+    TaskitemAddComponent,
+    TaskitemEditComponent,
+    TaskitemDeleteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,6 +37,8 @@ import { TaskitemAddComponent } from './taskitem-add/taskitem-add.component';
       // { path: 'fetch-data', component: FetchDataComponent },
       { path: 'taskitem-list', component: TaskitemListComponent },
       { path: 'taskitem-add', component: TaskitemAddComponent },
+      { path: 'taskitem-edit/:id', component: TaskitemEditComponent },
+      { path: 'taskitem-delete', component: TaskitemDeleteComponent },
     ])
   ],
   providers: [],
