@@ -1,0 +1,36 @@
+<h1>Task</h1>
+
+<!-- <p>This component demonstrates fetching data from the server.</p> -->
+
+<p *ngIf="!taskItems"><em>Loading...</em></p>
+
+<div *ngIf="taskItems">
+  <div class="button-row">
+    <button class="btn btn-success mr-1" type="button" [routerLink]='["/taskitem-add"]'>New Task</button>
+  </div>
+  <br>
+
+  <table class='table table-striped' *ngIf="taskItems">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Status Complete</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let taskItem of taskItems">
+        <td>{{ taskItem.id }}</td>
+        <td>{{ taskItem.title }}</td>
+        <td>{{ taskItem.isComplete }}</td>
+        <td width="250">                
+            <button type="button" class="btn btn-danger mr-1" 
+              [routerLink]='["/taskitem-delete/", taskItem.id]'>Delete</button>
+            <button type="button" class="btn btn-primary"
+              [routerLink]='["/taskitem-edit/", taskItem.id]'>Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<h1>Delete</h1>
+
+<hr/>
+<div *ngIf="taskItem">
+  <div>
+    <label><b>ID: </b></label> {{taskItem.id}}
+  </div>
+  <div>
+    <label><b>Title: </b></label> {{taskItem.title}}
+  </div>
+  <div>
+    <label><b>Status: </b></label> {{taskItem.isComplete}}
+  </div>  
+</div>
+
+<button type="submit" class="btn btn-danger mt-4" style="margin-right: 5px" 
+        (click)="deleteTaskItem(taskItem.id)">Delete</button>
+<button type="submit" class="btn btn-primary mt-4" 
+        [routerLink]="['/taskitem-list']">Back</button>
