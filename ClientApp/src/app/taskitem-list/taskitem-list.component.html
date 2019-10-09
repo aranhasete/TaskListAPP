@@ -6,7 +6,7 @@
 
 <div *ngIf="taskItems">
   <div class="button-row">
-    <button class="btn btn-primary mr-1" type="button" [routerLink]='["/taskitem-add"]'>New Task</button>
+    <button class="btn btn-success mr-1" type="button" [routerLink]='["/taskitem-add"]'>New Task</button>
   </div>
   <br>
 
@@ -25,10 +25,10 @@
         <td>{{ taskItem.title }}</td>
         <td>{{ taskItem.isComplete }}</td>
         <td width="250">                
-            <button type="button" class="btn btn-danger mr-1">Delete</button>
-            <a [routerLink]='["/taskitem-edit/", taskItem.id]'>
-              <button type="button" class="btn btn-primary">Edit</button>
-            </a>
+            <button type="button" class="btn btn-danger mr-1" 
+              [routerLink]='["/taskitem-delete/", taskItem.id]'>Delete</button>
+            <button type="button" class="btn btn-primary"
+              [routerLink]='["/taskitem-edit/", taskItem.id]'>Edit</button>
         </td>
       </tr>
     </tbody>

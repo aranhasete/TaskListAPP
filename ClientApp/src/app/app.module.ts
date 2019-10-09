@@ -38,7 +38,7 @@ import { TaskitemDeleteComponent } from './taskitem-delete/taskitem-delete.compo
       { path: 'taskitem-list', component: TaskitemListComponent },
       { path: 'taskitem-add', component: TaskitemAddComponent },
       { path: 'taskitem-edit/:id', component: TaskitemEditComponent },
-      { path: 'taskitem-delete', component: TaskitemDeleteComponent },
+      { path: 'taskitem-delete/:id', component: TaskitemDeleteComponent },
     ])
   ],
   providers: [],
