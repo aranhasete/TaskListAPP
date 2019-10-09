@@ -54,6 +54,7 @@ export class TaskitemAddComponent implements OnInit {
   }
 
   goToList() {
-    this.myRouter.navigate(['/TaskItems']);
+    // this.myRouter.navigate(['/TaskItems']);
+    this.router.navigate(['/TaskItems/', '']);
   }
 }

@@ -28,9 +28,3 @@ export class TaskitemListComponent implements OnInit {
   }
 
 }
-
-// interface TaskItem {
-//   id: number;
-//   title: number;
-//   isComplete: boolean;
-// }
