@@ -17,5 +17,5 @@ Segue abaixo ferramentas e framework utilizados e necessário no desenvolvimento 
 -	IIS 8.0 – Utilizado para rodar a aplicação.
 
 ## Executando para teste:
-Com o pré-requisitos já instalado e configurados o projeto pode ser clonado do repositório e aberto no Visual Studio, assim abre-se o console de gerenciamento de pacotes através do caminho menus Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes e executa o comando “Update-Database” para o Migrations criar a estrutura de bando de dados que será utilizada para salvar os dados do sistema.
+Com o pré-requisitos já instalado e configurados o projeto pode ser clonado do repositório e aberto no Visual Studio, assim abre-se o console de gerenciamento de pacotes através do caminho menus "Ferramentas > Gerenciador de Pacotes do Nuget > Console do Gerenciador de Pacotes" e executa o comando “Update-Database” para o Migrations criar a estrutura de bando de dados que será utilizada para salvar os dados do sistema.
 
